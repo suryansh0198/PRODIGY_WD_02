@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch & Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+        <h1>Stopwatch & Timer</h1>
+
+        <!-- Mode Selection -->
+        <div class="tabs">
+            <button class="tab active" data-mode="stopwatch">Stopwatch</button>
+            <button class="tab" data-mode="countdown">Countdown</button>
+            <button class="tab" data-mode="pomodoro">Pomodoro</button>
+            <button class="tab" data-mode="interval">Interval</button>
+        </div>
+
+        <!-- Stopwatch -->
+        <div id="stopwatchSection" class="section">
+            <div id="display">00:00:00</div>
+
+            <div class="buttons">
+                <button id="startBtn">Start</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="resetBtn">Reset</button>
+                <button id="lapBtn">Lap</button>
+            </div>
+
+            <p class="shortcut-note">💡 Tip: Press <kbd>Space</kbd> to start or pause the stopwatch.</p>
+
+            <h2>Lap Times</h2>
+            <ul id="laps"></ul>
+        </div>
+
+        <!-- Countdown -->
+        <div id="countdownSection" class="section hidden">
+            <h2>Set Countdown</h2>
+
+            <div class="time-inputs">
+                <div>
+                    <label>Minutes</label>
+                    <input type="number" id="countdownMinutes" min="0" max="999" value="5">
+                </div>
+
+                <div>
+                    <label>Seconds</label>
+                    <input type="number" id="countdownSeconds" min="0" max="59" value="0">
+                </div>
+            </div>
+
+            <div id="countdownDisplay">05:00</div>
+
+            <div class="buttons">
+                <button id="countdownStartBtn">Start</button>
+                <button id="countdownPauseBtn">Pause</button>
+                <button id="countdownResetBtn">Reset</button>
+            </div>
+        </div>
+
+        <!-- Pomodoro -->
+        <div id="pomodoroSection" class="section hidden">
+            <h2>Pomodoro Timer</h2>
+            <p class="description">Work for 25 minutes, then take a 5-minute break.</p>
+
+            <div id="pomodoroDisplay">25:00</div>
+            <div id="pomodoroStatus">Work Session</div>
+
+            <div class="buttons">
+                <button id="pomodoroStartBtn">Start</button>
+                <button id="pomodoroPauseBtn">Pause</button>
+                <button id="pomodoroResetBtn">Reset</button>
+            </div>
+        </div>
+
+        <!-- Interval -->
+        <div id="intervalSection" class="section hidden">
+            <h2>Interval Timer</h2>
+            <p class="description">Alternate between work and rest periods.</p>
+
+            <div class="time-inputs">
+                <div>
+                    <label>Work (minutes)</label>
+                    <input type="number" id="workMinutes" min="1" value="1">
+                </div>
+
+                <div>
+                    <label>Rest (minutes)</label>
+                    <input type="number" id="restMinutes" min="1" value="1">
+                </div>
+            </div>
+
+            <div id="intervalDisplay">01:00</div>
+            <div id="intervalStatus">Work Interval</div>
+
+            <div class="buttons">
+                <button id="intervalStartBtn">Start</button>
+                <button id="intervalPauseBtn">Pause</button>
+                <button id="intervalResetBtn">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
